@@ -1,0 +1,22 @@
+name: 'Setup Dynatrace Monitoring'
+description: 'Deploys the OneAgent to the Kubernetes Cluster running Keptn. This action assumes that kubectl is available and connected to the correct cluster'
+inputs:
+  DTTenant:
+    description: Dynatrace Tenant
+    required: true
+  DTAPIToken:
+    description: Dynatrace API Token
+    required: true
+  DTPaaSToken:
+    description: Dynatrace PaaS Token
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      id: deploy_dynatrace
+      run: ${{ github.action_path }}/deploy_dynatrace.sh
+
+
+
+
