@@ -28,7 +28,7 @@ curl -X POST \
                     "comparisonInfo": {
                         "type": "STRING",
                         "operator": "BEGINS_WITH",
-                        "value": "'${KEPTN__SELF_MONITORING_PROJECT}'",
+                        "value": "'${KEPTN_SELF_MONITORING_PROJECT}'",
                         "negate": false,
                         "caseSensitive": true
                     }
@@ -62,7 +62,7 @@ curl -X POST \
                     "comparisonInfo": {
                         "type": "STRING",
                         "operator": "BEGINS_WITH",
-                        "value": "'${KEPTN__SELF_MONITORING_PROJECT}'",
+                        "value": "'${KEPTN_SELF_MONITORING_PROJECT}'",
                         "negate": false,
                         "caseSensitive": true
                     }
