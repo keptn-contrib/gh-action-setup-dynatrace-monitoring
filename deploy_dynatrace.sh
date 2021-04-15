@@ -45,7 +45,7 @@ curl -X POST \
   -H "Authorization: Api-token ${DT_API_TOKEN}" \
   -H 'Content-Type: application/json' \
   -d '{
-  "name": "keptn_selfmon_service",
+  "name": "keptn_selfmon_stage",
   "rules": [
         {
             "type": "SERVICE",
