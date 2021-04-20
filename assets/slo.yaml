@@ -15,8 +15,7 @@ objectives:
       - criteria:
           - "<=500"
     weight: 1
-  - sli: "throughput"
-  - sli: "error_rate"
+  - sli: "error_rate_mongodb-datastore"
     pass:
       - criteria:
           - "<1"
