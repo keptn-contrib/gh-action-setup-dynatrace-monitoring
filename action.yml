@@ -24,6 +24,7 @@ runs:
         DT_API_TOKEN: ${{ inputs.DTAPIToken }}
         DT_PAAS_TOKEN: ${{ inputs.DTPaaSToken }}
         KEPTN_SELF_MONITORING_PROJECT: ${{ inputs.KeptnSelfMonitoringProject }}
+        BASE_PATH: ${{ github.action_path }}
       run: ${{ github.action_path }}/deploy_dynatrace.sh
 
 

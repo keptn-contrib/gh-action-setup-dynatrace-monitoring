@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ${{ github.action_path }}/utils.sh
+source ${BASE_PATH}/utils.sh
 
 echo "Deploying Dynatrace OneAgent Operator"
 wget https://github.com/dynatrace/dynatrace-operator/releases/latest/download/install.sh -O install.sh && sh ./install.sh --api-url "https://${DT_TENANT}/api" --api-token "${DT_API_TOKEN}" --paas-token "${DT_PAAS_TOKEN}" --enable-k8s-monitoring --enable-volume-storage
@@ -93,5 +93,5 @@ echo "configuring keptn for dynatrace monitoring"
 keptn configure monitoring dynatrace --project="${KEPTN_SELF_MONITORING_PROJECT}"
 
 echo "uploading sli config to ${KEPTN_SELF_MONITORING_PROJECT}"
-keptn add-resource --project=${KEPTN_SELF_MONITORING_PROJECT} --service=keptn --resource=${{ github.action_path }}/assets/sli.yaml --resourceUri=sli.yaml --all-stages
-keptn add-resource --project=${KEPTN_SELF_MONITORING_PROJECT} --service=keptn --resource=${{ github.action_path }}/assets/slo.yaml --resourceUri=slo.yaml --all-stages
+keptn add-resource --project=${KEPTN_SELF_MONITORING_PROJECT} --service=keptn --resource=${BASE_PATH}/assets/sli.yaml --resourceUri=sli.yaml --all-stages
+keptn add-resource --project=${KEPTN_SELF_MONITORING_PROJECT} --service=keptn --resource=${BASE_PATH}/assets/slo.yaml --resourceUri=slo.yaml --all-stages
