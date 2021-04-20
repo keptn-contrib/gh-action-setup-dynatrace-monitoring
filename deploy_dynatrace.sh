@@ -93,5 +93,5 @@ echo "configuring keptn for dynatrace monitoring"
 keptn configure monitoring dynatrace --project="${KEPTN_SELF_MONITORING_PROJECT}"
 
 echo "uploading sli config to ${KEPTN_SELF_MONITORING_PROJECT}"
-keptn add-resource --project=${KEPTN_SELF_MONITORING_PROJECT} --service=keptn --resource=${BASE_PATH}/assets/sli.yaml --resourceUri=sli.yaml --all-stages
+keptn add-resource --project=${KEPTN_SELF_MONITORING_PROJECT} --service=keptn --resource=${BASE_PATH}/assets/sli.yaml --resourceUri=dynatrace/sli.yaml --all-stages
 keptn add-resource --project=${KEPTN_SELF_MONITORING_PROJECT} --service=keptn --resource=${BASE_PATH}/assets/slo.yaml --resourceUri=slo.yaml --all-stages

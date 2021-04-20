@@ -7,7 +7,7 @@ comparison:
   number_of_comparison_results: 1
 filter:
 objectives:
-  - sli: "response_time_p95"
+  - sli: "response_time_p95_mongodb-datastore"
     pass:
       - criteria:
           - "<250"
@@ -23,9 +23,9 @@ objectives:
     warning:
       - criteria:
           - "<=+25%"
-  - sli: "throughput"
-  - sli: "cpu_time"
-  - sli: "io_time"
+  - sli: "throughput_mongodb-datastore"
+  - sli: "cpu_time_mongodb-datastore"
+  - sli: "io_time_mongodb-datastore"
 total_score:
   pass: "90%"
   warning: "75%"
