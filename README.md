@@ -10,9 +10,12 @@ It will also add SLI/SLO configs that can be used to evaluate the performance of
 | DTAPIToken | yes | string | Dynatrace API Token| - |
 | DTPaaSToken | yes | string | Dynatrace PaaS Token | - |
 | KeptnSelfMonitoringProject | no | string | Name of the Keptn selfmonitoring project | `keptn` |
-| DynatraceServiceVersion | no | string | Version of the dynatrace-service | `0.13.0` |
-| DynatraceSLIServiceVersion | no | string | Version of the dynatrace-sli-service | `0.10.0` |
+| DynatraceServiceVersion | no | string | Version of the dynatrace-service (*) | `0.12.0` |
+| DynatraceSLIServiceVersion | no | string | Version of the dynatrace-sli-service (**) | `0.9.0` |
 
+(\*) The action requires at least version `0.12.0` of the dynatrace-service. Earlier versions will not work.
+
+(**) The action requires at least version `0.9.0` of the dynatrace-sli-service. Earlier versions will not work.
 
 ## Example usage
 
