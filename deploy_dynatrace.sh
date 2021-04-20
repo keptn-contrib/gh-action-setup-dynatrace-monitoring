@@ -81,10 +81,10 @@ echo "creating Dynatrace secret"
 kubectl create secret generic dynatrace -n "keptn" --from-literal="DT_TENANT=${DT_TENANT}" --from-literal="DT_API_TOKEN=${DT_API_TOKEN}"
 
 echo "deploying dynatrace-service"
-kubectl apply -f https://github.com/keptn-contrib/dynatrace-service/blob/release-0.12.0/deploy/service.yaml -n keptn
+kubectl apply -f https://raw.githubusercontent.com/keptn-contrib/dynatrace-service/release-0.12.0/deploy/service.yaml -n keptn
 
 echo "deploying dynatrace-sli-service"
-kubectl apply -f https://github.com/keptn-contrib/dynatrace-sli-service/blob/release-0.9.0/deploy/service.yaml -n keptn
+kubectl apply -f https://raw.githubusercontent.com/keptn-contrib/dynatrace-sli-service/release-0.9.0/deploy/service.yaml -n keptn
 
 wait_for_deployment_in_namespace "dynatrace-service" "keptn"
 wait_for_deployment_in_namespace "dynatrace-sli-service" "keptn"
