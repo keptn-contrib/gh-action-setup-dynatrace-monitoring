@@ -85,18 +85,14 @@ echo "deploying dynatrace-service"
 if [[ $DYNATRACE_SERVICE_VERSION == "0.12.0" ]]; then
   kubectl apply -f https://raw.githubusercontent.com/keptn-contrib/dynatrace-service/release-0.12.0/deploy/service.yaml -n keptn
 else
-  wget "https://github.com/keptn-contrib/dynatrace-service/releases/download/${DYNATRACE_SERVICE_VERSION}/dynatrace-service-${DYNATRACE_SERVICE_VERSION}.tgz" -O "${HOME}/downloads/dynatrace-service.tgz"
-  mv ${HOME}/downloads/dynatrace-service.tgz ${HOME}/uniform-dist/
-  helm install dynatrace-service http://0.0.0.0:8000/"dynatrace-service.tgz" -n keptn
+  helm install dynatrace-service https://github.com/keptn-contrib/dynatrace-service/releases/download/${DYNATRACE_SERVICE_VERSION}/dynatrace-service-${DYNATRACE_SERVICE_VERSION}.tgz -n keptn
 fi
 
 echo "deploying dynatrace-sli-service"
 if [[ $DYNATRACE_SLI_SERVICE_VERSION == "0.9.0" ]]; then
   kubectl apply -f https://raw.githubusercontent.com/keptn-contrib/dynatrace-sli-service/release-0.9.0/deploy/service.yaml -n keptn
 else
-  wget "https://github.com/keptn-contrib/dynatrace-sli-service/releases/download/${DYNATRACE_SLI_SERVICE_VERSION}/dynatrace-sli-service-${DYNATRACE_SLI_SERVICE_VERSION}.tgz" -O "${HOME}/downloads/dynatrace-sli-service.tgz"
-  mv ${HOME}/downloads/dynatrace-sli-service.tgz ${HOME}/uniform-dist/
-  helm install dynatrace-sli-service http://0.0.0.0:8000/"dynatrace-sli-service.tgz" -n keptn
+  helm install dynatrace-sli-service https://github.com/keptn-contrib/dynatrace-sli-service/releases/download/${DYNATRACE_SLI_SERVICE_VERSION}/dynatrace-sli-service-${DYNATRACE_SLI_SERVICE_VERSION}.tgz -n keptn
 fi
 
 wait_for_deployment_in_namespace "dynatrace-service" "keptn"
