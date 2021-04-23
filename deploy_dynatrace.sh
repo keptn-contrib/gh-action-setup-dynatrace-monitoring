@@ -5,6 +5,16 @@ source ${BASE_PATH}/utils.sh
 echo "Deploying Dynatrace OneAgent Operator"
 wget https://github.com/dynatrace/dynatrace-operator/releases/latest/download/install.sh -O install.sh && sh ./install.sh --api-url "https://${DT_TENANT}/api" --api-token "${DT_API_TOKEN}" --paas-token "${DT_PAAS_TOKEN}" --enable-k8s-monitoring --enable-volume-storage
 
+DYNATRACE_OPERATOR_RELEASE="v0.2.1"
+INSTALLER_CHECKSUM="eb48ab22e9b6dac110cfd9f130045b49c9f12b9f3850f76e2657d9071342a1c1"
+wget https://github.com/dynatrace/dynatrace-operator/releases/download/${DYNATRACE_OPERATOR_RELEASE}/install.sh -O install.sh
+
+echo "${INSTALLER_CHECKSUM} install.sh" | sha256sum --check
+
+verify_test_step $? "OneAgent installer script checksum does not match expected value"
+
+sh ./install.sh --api-url "https://${DT_TENANT}/api" --api-token "${DT_API_TOKEN}" --paas-token "${DT_PAAS_TOKEN}" --enable-k8s-monitoring --enable-volume-storage
+
 # setup automatic tagging rules
 
 # keptn_selfmon_service tagging rule, e.g., keptn_selfmon_service: shipyard-controller
