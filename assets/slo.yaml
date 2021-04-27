@@ -1,0 +1,30 @@
+---
+spec_version: "0.1.1"
+comparison:
+  aggregate_function: "avg"
+  compare_with: "single_result"
+  include_result_with_score: "pass"
+  number_of_comparison_results: 1
+filter:
+objectives:
+  - sli: "response_time_p95_mongodb-datastore"
+    pass:
+      - criteria:
+          - "<250"
+    warning:
+      - criteria:
+          - "<=500"
+    weight: 1
+  - sli: "error_rate_mongodb-datastore"
+    pass:
+      - criteria:
+          - "<1"
+    warning:
+      - criteria:
+          - "<=+25%"
+  - sli: "throughput_mongodb-datastore"
+  - sli: "cpu_time_mongodb-datastore"
+  - sli: "io_time_mongodb-datastore"
+total_score:
+  pass: "90%"
+  warning: "75%"
