@@ -1,0 +1,11 @@
+{
+  "type": "sh.keptn.event.monaco.triggered",
+  "specversion": "1.0",
+  "source": "test-events",
+  "contenttype": "application/json",
+  "data": {
+    "project": "keptn",
+    "stage": "hardening",
+    "service": "keptn"
+  }
+}

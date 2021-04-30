@@ -1,0 +1,14 @@
+config:
+  - service_availability: "service_availability.json"
+  - mongodb_datastore_performance: "performance.json"
+
+service_availability:
+  - name: "Keptn Service Availability"
+  - project: "{{ .Env.KEPTN_PROJECT }}"
+  - stage: "{{ .Env.KEPTN_STAGE }}"
+
+mongodb_datastore_performance:
+  - name: "Performance"
+  - project: "{{ .Env.KEPTN_PROJECT }}"
+  - stage: "{{ .Env.KEPTN_STAGE }}"
+  - service: "mongodb-datastore"

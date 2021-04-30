@@ -1,0 +1,30 @@
+{
+  "name": "{{ .name }}",
+  "rules": [
+    {
+      "type": "SERVICE",
+      "enabled": true,
+      "propagationTypes": [],
+      "conditions": [
+        {
+          "key": {
+            "attribute": "SERVICE_TAGS",
+            "type": "STATIC"
+          },
+          "comparisonInfo": {
+            "type": "TAG",
+            "operator": "EQUALS",
+            "value": {
+              "context": "CONTEXTLESS",
+              "key": "keptn_selfmon_namespace",
+              "value": "{{ .name }}"
+            },
+            "negate": false
+          }
+        }
+      ]
+    }
+  ],
+  "dimensionalRules": [],
+  "entitySelectorBasedRules": []
+}

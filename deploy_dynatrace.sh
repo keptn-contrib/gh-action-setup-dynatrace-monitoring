@@ -105,6 +105,7 @@ else
   helm install dynatrace-sli-service https://github.com/keptn-contrib/dynatrace-sli-service/releases/download/${DYNATRACE_SLI_SERVICE_VERSION}/dynatrace-sli-service-${DYNATRACE_SLI_SERVICE_VERSION}.tgz -n keptn
 fi
 
+
 wait_for_deployment_in_namespace "dynatrace-service" "keptn"
 wait_for_deployment_in_namespace "dynatrace-sli-service" "keptn"
 

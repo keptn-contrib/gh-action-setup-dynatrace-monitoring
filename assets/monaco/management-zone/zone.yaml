@@ -1,0 +1,5 @@
+config:
+  - keptn: "zone.json"
+
+keptn:
+  - name: "{{ .Env.KEPTN_PROJECT }}-{{ .Env.KEPTN_STAGE }}"

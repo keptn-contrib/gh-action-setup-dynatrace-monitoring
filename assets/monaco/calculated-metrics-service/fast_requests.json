@@ -1,0 +1,43 @@
+{
+  "tsmMetricKey": "{{ .id }}",
+  "name": "{{ .name }}",
+  "enabled": true,
+  "metricDefinition": {
+    "metric": "REQUEST_COUNT",
+    "requestAttribute": null
+  },
+  "unit": "COUNT",
+  "unitDisplayName": null,
+  "managementZones": ["{{ .mZoneId }}"],
+  "conditions": [
+    {
+      "attribute": "REQUEST_TYPE",
+      "comparisonInfo": {
+        "type": "STRING",
+        "comparison": "EQUALS",
+        "value": "Dynamic web requests",
+        "values": null,
+        "negate": false,
+        "caseSensitive": false
+      }
+    },
+    {
+      "attribute": "RESPONSE_TIME",
+      "comparisonInfo": {
+        "type": "NUMBER",
+        "comparison": "LOWER_THAN_OR_EQUAL",
+        "value": 300,
+        "values": null,
+        "negate": false
+      }
+    }
+  ],
+  "dimensionDefinition": {
+    "name": "Dimension",
+    "dimension": "All requests",
+    "placeholders": [],
+    "topX": 10,
+    "topXDirection": "DESCENDING",
+    "topXAggregation": "SINGLE_VALUE"
+  }
+}
