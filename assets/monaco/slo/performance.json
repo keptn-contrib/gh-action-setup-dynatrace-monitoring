@@ -8,7 +8,7 @@
   "error": "NONE",
   "useRateMetric": false,
   "metricRate": "",
-  "metricNumerator": "calc:service.fastmongodbdatastorerequests",
+  "metricNumerator": "{{ .metricId }}",
   "numeratorValue": -1.0,
   "metricDenominator": "builtin:service.requestCount.server",
   "denominatorValue": -1.0,

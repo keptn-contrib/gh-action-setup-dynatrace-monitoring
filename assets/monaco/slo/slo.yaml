@@ -12,3 +12,4 @@ mongodb_datastore_performance:
   - project: "{{ .Env.KEPTN_PROJECT }}"
   - stage: "{{ .Env.KEPTN_STAGE }}"
   - service: "mongodb-datastore"
+  - metricId: "/{{ .Env.KEPTN_PROJECT }}/calculated-metrics-service/calculated-metrics-fastrequests.id"
