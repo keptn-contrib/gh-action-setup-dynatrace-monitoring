@@ -22,6 +22,10 @@ inputs:
     description: Version of the dynatrace-sli-service
     default: '0.9.0'
     required: false
+  SetupMonaco:
+    description: Set up Monaco capabilities
+    default: 'false'
+    required: false
 runs:
   using: composite
   steps:
@@ -35,7 +39,15 @@ runs:
         BASE_PATH: ${{ github.action_path }}
         DYNATRACE_SERVICE_VERSION: ${{ inputs.DynatraceServiceVersion }}
         DYNATRACE_SLI_SERVICE_VERSION: ${{ inputs.DynatraceSLIServiceVersion }}
+        MONACO_SERVICE_VERSION: ${{ inputs.MonacoServiceVersion }}
       run: ${{ github.action_path }}/deploy_dynatrace.sh
+
+    - shell: bash
+      id: deploy_monaco_service
+      env:
+        MONACO_SERVICE_VERSION: ${{ inputs.MonacoServiceVersion }}
+        BASE_PATH: ${{ github.action_path }}
+      run: ${{ github.action_path }}/setup_monaco.sh
 
 
 

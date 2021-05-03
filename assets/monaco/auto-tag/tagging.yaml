@@ -1,0 +1,11 @@
+config:
+  - keptn-selfmon-namespace: "keptn_selfmon_namespace.json"
+  - keptn-selfmon-service: "keptn_selfmon_service.json"
+
+keptn-selfmon-namespace:
+  - name: "Keptn self monitoring namespace"
+  - projectName: {{ .Env.KEPTN_PROJECT }}
+
+keptn-selfmon-service:
+  - name: "Keptn self monitoring service"
+  - projectName: {{ .Env.KEPTN_PROJECT }}

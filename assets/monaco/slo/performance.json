@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "name": "{{ .name }}}}",
+  "description": "",
+  "evaluatedPercentage": -1.0,
+  "errorBudget": -1.0,
+  "status": "SUCCESS",
+  "error": "NONE",
+  "useRateMetric": false,
+  "metricRate": "",
+  "metricNumerator": "{{ .metricId }}",
+  "numeratorValue": -1.0,
+  "metricDenominator": "builtin:service.requestCount.server",
+  "denominatorValue": -1.0,
+  "target": 99.98,
+  "warning": 99.99,
+  "evaluationType": "AGGREGATE",
+  "timeframe": "-1w",
+  "filter": "type(\"SERVICE\"),tag(\"keptn_selfmon_namespace:{{ .project }}-{{ .stage }}\",\"keptn_selfmon_namespace:{{ .service }}\")"
+}

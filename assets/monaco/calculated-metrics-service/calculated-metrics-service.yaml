@@ -1,0 +1,7 @@
+config:
+  - calculated-metrics-fastrequests: "fast_requests.json"
+
+calculated-metrics-fastrequests:
+  - id: "calc:service.fastkeptnrequests"
+  - name: "Fast Requests"
+  - mZoneId: "/{{ .Env.KEPTN_PROJECT }}/management-zone/keptn.name"

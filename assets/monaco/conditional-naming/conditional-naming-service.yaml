@@ -1,0 +1,6 @@
+config:
+  - service-naming: "keptn_service.json"
+
+service-naming:
+  - name: "Keptn Service Name"
+  - serviceName: "{{ .Env.KEPTN_PROJECT }}-{{ .Env.KEPTN_STAGE }}"
